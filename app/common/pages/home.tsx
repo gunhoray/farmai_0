@@ -1,5 +1,19 @@
-import { Route } from "react-router";
 import Navigation from "~/common/components/navagation";
+
+export function loader() {
+  return {};
+}
+
+export function action() {
+  return {};
+}
+
+export function meta() {
+  return [
+    { title: "FarmAI - AI Farm Consulting" },
+    { name: "description", content: "Easy and exact management of your farm with AI consulting" },
+  ];
+}
 
 export default function Home() {
   return (
@@ -8,7 +22,7 @@ export default function Home() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('public/images/main_image.png')",
+          backgroundImage: "url('/images/main_image.png')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/10 to-background" />
@@ -16,7 +30,7 @@ export default function Home() {
 
       {/* Content */}
       <div className="relative">
-        <Navigation isLoggedIn={false} />
+        <Navigation />
         <main className="container mx-auto px-4 pt-24">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <h1 className="pt-40 text-8xl font-bold tracking-tight mb-3 text-center text-white">

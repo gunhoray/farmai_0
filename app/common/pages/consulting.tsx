@@ -47,6 +47,17 @@ export async function loader({ params }: Route.LoaderArgs) {
   return { farm };
 }
 
+export function action() {
+  return {};
+}
+
+export function meta() {
+  return [
+    { title: "Farm Consulting - FarmAI" },
+    { name: "description", content: "AI-powered farm consulting and analysis" },
+  ];
+}
+
 export default function Consulting({ loaderData }: Route.ComponentProps) {
   const { farm } = loaderData;
   const [title, setTitle] = useState("");
@@ -248,7 +259,7 @@ export default function Consulting({ loaderData }: Route.ComponentProps) {
   if (!farm) {
     return (
       <div className="min-h-screen bg-background">
-        <Navigation isLoggedIn={true} />
+        <Navigation />
         <div className="container mx-auto px-4 py-8 pt-24">
           <div className="text-center">
             <h1 className="text-2xl font-semibold">농장 정보를 찾을 수 없습니다.</h1>
@@ -260,7 +271,7 @@ export default function Consulting({ loaderData }: Route.ComponentProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation isLoggedIn={true} />
+      <Navigation />
       <div className="container mx-auto px-4 py-8 pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column */}
